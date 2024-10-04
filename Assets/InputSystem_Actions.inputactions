@@ -92,7 +92,7 @@
                 {
                     "name": "left",
                     "id": "918bda11-9977-41fe-98fe-cee02ef7424f",
-                    "path": "<Keyboard>/leftArrow",
+                    "path": "<ViveTracker>/deviceAngularVelocity/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -103,7 +103,7 @@
                 {
                     "name": "right",
                     "id": "3560f3cf-4f13-4c8e-9807-f591a2d8f535",
-                    "path": "<Keyboard>/rightArrow",
+                    "path": "<ViveTracker>/deviceAngularVelocity/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -125,6 +125,83 @@
                 {
                     "name": "backward",
                     "id": "fce453e7-0e1d-45ca-bd08-833498225f13",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accelerometer",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "3D Vector",
+                    "id": "308a878a-d39e-4d3b-898f-125c1e857e41",
+                    "path": "3DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accelerometer",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "c4554851-28b0-42a3-bdc3-113db1b2aa53",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accelerometer",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "76efc5f6-eef6-402c-b2a1-3e90945a0d80",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accelerometer",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "7118a7c5-f4bf-4fbf-ba2a-298f86f8e6e2",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accelerometer",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "8be68ae9-290b-4bb5-9a1c-7254e5f814f8",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accelerometer",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "forward",
+                    "id": "f57115c8-114c-4987-ae20-e529b9802541",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accelerometer",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "backward",
+                    "id": "627a0647-6349-4ae1-9837-1ab15891552e",
                     "path": "",
                     "interactions": "",
                     "processors": "",
