@@ -12,6 +12,10 @@ public class GyroscopeController : MonoBehaviour
     {
         Toggle.isOn = controls.gyroscope;
     }
+    private void OnEnable()
+    {
+        Toggle.isOn = controls.gyroscope;
+    }
     public void CambiarBool()
     {
         controls.gyroscope = Toggle.isOn;

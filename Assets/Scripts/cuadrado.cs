@@ -18,6 +18,14 @@ public class cuadrado : MonoBehaviour
         input = Instantiate(_ActionInput);
 
         input.FindActionMap("Player").Enable();
+        if (UnityEngine.InputSystem.Gyroscope.current != null)
+{
+       InputSystem.EnableDevice(UnityEngine.InputSystem.Gyroscope.current);
+}
+if (AttitudeSensor.current != null)
+{
+        InputSystem.EnableDevice(AttitudeSensor.current);
+}
     }
     private void Update()
     {
@@ -32,7 +40,7 @@ public class cuadrado : MonoBehaviour
         }
         else
         {
-            this.GetComponent<Rigidbody2D>().velocity = new Vector2(input.FindActionMap("Player").FindAction("Accelerometer").ReadValue<Vector3>().x * 3.5f, 0);
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(-input.FindActionMap("Player").FindAction("Accelerometer").ReadValue<Vector3>().z * 3.5f, 0);
         };
         Debug.Log("Accelerometer 1: " + input.FindActionMap("Player").FindAction("Accelerometer").ReadValue<Vector3>());
         Debug.Log("Accelerometer 2: " + input.FindActionMap("Player").FindAction("AccelerometerTeclado").ReadValue<Vector3>());
@@ -40,21 +48,37 @@ public class cuadrado : MonoBehaviour
 
     public void movementRight(InputAction.CallbackContext context)
     {
-        if(context.started)
-            this.GetComponent<Rigidbody2D>().velocity = new Vector2(3.5f, 0);
-        else if(context.canceled)
+        if (controls.gyroscope)
+        {
+            if (context.started)
+                this.GetComponent<Rigidbody2D>().velocity = new Vector2(3.5f, 0);
+            else if (context.canceled)
+                this.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        }
+        else
+        {
+            if (context.started)
+                this.GetComponent<Rigidbody2D>().velocity = UnityEngine.InputSystem.Gyroscope.current.angularVelocity.ReadValue();
             this.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-
+        }
         print(context);
     }
 
     public void movementLeft(InputAction.CallbackContext context)
     {
-        if (context.started)
-            this.GetComponent<Rigidbody2D>().velocity = new Vector2(-3.5f, 0);
-        else if (context.canceled)
+        if (controls.gyroscope)
+        {
+            if (context.started)
+                this.GetComponent<Rigidbody2D>().velocity = new Vector2(-3.5f, 0);
+            else if (context.canceled)
+                this.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        }
+        else
+        {
+            if (context.started)
+                this.GetComponent<Rigidbody2D>().velocity = UnityEngine.InputSystem.Gyroscope.current.angularVelocity.ReadValue();
             this.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-
+        }
         print(context);
     }
     private void OnCollisionEnter2D(Collision2D collision)
